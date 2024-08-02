@@ -32,7 +32,11 @@ To set up and run the project, follow these steps:
 <h2>Data Model</h2>
 The schema includes models for User, Post, PostDetail, SavedPost, Chat, and Message, each with specific fields to capture relevant data. The User model maintains user information, the Post model holds property listings, and the PostDetail model provides additional details about each post. The SavedPost model allows users to save their favorite posts, while the Chat and Message models enable real-time communication between users. The ER diagram is as follows
 
-![image](https://github.com/user-attachments/assets/4cc994ec-d27f-4e65-bdd2-f9c20d68327e)
+
+<img width="656" alt="Screenshot 2024-07-26 at 5 10 58 PM" src="https://github.com/user-attachments/assets/95e62d7a-6669-46dc-bc4b-70f28a1c5dc7">
+
+
+
 
 <h2>Design Patterns Followed</h2>
 
@@ -41,8 +45,9 @@ The project employs several design patterns to ensure clean, maintainable code:
 <li><b>Builder Pattern:</b> Splits complex object creation processes, such as Post and PostDetail, into simpler, more manageable parts. This separation allows for more flexible and maintainable code by constructing Post objects and their detailed descriptions (PostDetail) independently.</li>
 
 <h2>High Level Architecture</h2>
+<img width="466" alt="Screenshot 2024-07-26 at 8 39 32 PM" src="https://github.com/user-attachments/assets/f3fa9b13-cdec-41a0-b2bd-ae86eb500c28">
 
-<img width="466" alt="Screenshot 2024-07-26 at 8 39 32 PM" src="https://github.com/user-attachments/assets/0ae35404-e2e9-40c6-b6d8-9d982c11019a">
+
 
 
 The application architecture is built with a React frontend and an Express backend. The React app interacts with the Express API, where middleware manages authentication and authorization, ensuring that only logged-in users can access protected routes. The Express API handles data requests, interacts with the MongoDB database via Prisma ORM, and returns the appropriate responses. In the React app, routes are categorized into protected and unprotected types: protected routes include profile updates, user updates, and post creation, while unprotected routes include the home page, listing page, login, and registration. This structure ensures a secure and efficient flow of data and user interactions across the system.We also have socket IO server to allow real time chat updates to both the participants and we use state management library called Zustand to display notificaion on unread messages in navbar (currently notification is not real time we have to refresh it but in future we can make it real time).
